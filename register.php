@@ -7,11 +7,7 @@
 <body>
         
     <p><center>
-<<<<<<< HEAD
 		<img src='img/logokab.png' width='120' height='140'></a>
-=======
-			<img src='img/logokab.png' width='120' height='140'></a>
->>>>>>> 551d45e8931a289f6e7048e0268a47f0229d6593
     </center>
             
 	<h1>Sistem Informasi Geografis Pemetaan Potensi<br/> Objek Wisata Pantai di Kabupaten Tulungagung</h1>
