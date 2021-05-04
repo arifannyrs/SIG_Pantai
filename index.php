@@ -1,3 +1,18 @@
+<?php
+  //memulai session
+  session_start();
+  //cek jika sebelumnya sudah ada session level
+  //maka redirect ke halaman berdasarkan level si pengguna.
+  if(isset($_SESSION["level"])){
+     header('Location: ./'.$_SESSION["level"].'/');
+  }
+
+  //include koneksi database
+  include("koneksi.php");
+  //include proses untuk merespon dari masing-masing action
+  include("proses.php"); 
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

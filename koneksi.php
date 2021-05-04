@@ -7,4 +7,4 @@ $db = "sig_pantai";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
-$base_url = "http://localhost:8080/SIG_Pantai1/";
+$base_url = "http://localhost:8080/SIG_Pantai/";
