@@ -30,6 +30,13 @@ if(isset($_POST["login"])){
         $_SESSION["username"] = $data["username"]; //buat session username
      	$_SESSION["level"] = $data["level"]; //buat session level
         header('Location: '.$base_url.'/admin/'); //redirect kehalaman admin.
+    
+    //jika password tidak sama, dan level pengguna == admin atau level pengguna == pengunjung
+     	//jika password sama dan levelnya == pengunjung
+    }else if($password == $data["password"] && $data["level"] == "pengunjung"){
+        $_SESSION["username"] = $data["username"]; //buat session username
+        $_SESSION["level"] = $data["level"]; //buat session level
+        header('Location: '.$base_url.'/pengunjung/'); //redirect kehalaman pengunjung.
 
     //jika password tidak sama, dan level pengguna == admin atau level pengguna == pengunjung
     }else if($password != $data["password"] && $data["level"] == "admin" | $data["level"] == "pegawai"| $data["level"] == "pengunjung"){
