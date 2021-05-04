@@ -13,18 +13,21 @@
 	<h1>Sistem Informasi Geografis Pemetaan Potensi<br/> Objek Wisata Pantai di Kabupaten Tulungagung</h1>
  
 		<div class="kotak_login">
-			<p class="tulisan_login">Silahkan login</p>
+			<p class="tulisan_login">Silahkan Daftar</p>
             <form action="" method="post">
 				<label>Username</label>
 				<input type="text" name="username" class="form_login" placeholder="Username .." required="required">
  
-  				<label>Password</label>
+                <label>Email</label>
+				<input type="email" name="email" class="form_login" placeholder="Alamat Email .." required="required">
+  				
+                <label>Password</label>
 	  			<input type="password" name="password" class="form_login" placeholder="Password .." required="required">
 
-                <button type="submit" name="login" class="tombol_login">LOGIN</button>
+                <button type="submit" name="register" class="tombol_login">LOGIN</button>
             </form>
             <p>
-                Belum punya akun? silahkan <a href="register.php">Daftar</a>
+                Kembali ke <a href="index.php">Login</a>
             </p>
         </div>
       </div>
