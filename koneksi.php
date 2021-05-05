@@ -1,8 +1,8 @@
 <?php
 
-$host = "localhost"; 
-$user = "root"; 
-$pass = ""; 
+$host = "localhost";
+$user = "root";
+$pass = "";
 $db = "sig_pantai";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
