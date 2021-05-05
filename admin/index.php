@@ -1,24 +1,24 @@
 <?php
-  session_start();
-  include("../koneksi.php");
-  include("../proses.php");
+session_start();
+include("../koneksi.php");
+include("../proses.php");
 
-  if(!isset($_SESSION["username"])){
-      echo'<script>
+if (!isset($_SESSION["username"])) {
+  echo '<script>
                 alert("Mohon login dahulu !");
                 window.location="../index.php";
              </script>';
-      return false;
-  }
+  return false;
+}
 
-  if($_SESSION["level"] != "admin"){
-        echo'<script>
+if ($_SESSION["level"] != "admin") {
+  echo '<script>
                 alert("Maaf Anda Tidak Berhak Ke Halaman ini !");
-                window.location="../'.$_SESSION["level"].'/";
+                window.location="../' . $_SESSION["level"] . '/";
              </script>';
-        return false;
-  }
-  ?>
+  return false;
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -39,7 +39,7 @@
     </h1>
 
     <div class="kotak_dashboard">
-        <h3 align="center">Selamat Datang <?=$pengguna["level"];?></h3>
+        <h3 align="center">Selamat Datang <?= $pengguna["level"]; ?></h3>
         <hr>
         <p class="centered">
             <a href="data-pengguna.php" class="tombol_login">DATA PENGGUNA</a>
@@ -53,14 +53,16 @@
         </div>
         <div class="box-chart">
             <ul class="list-chart">
-                <li class="bg-black" style="height: <?=$totalPengguna*10;?>px;"><span class="detail-chart">Total Data:
-                        <?=$totalPengguna;?></span></li>
-                <li class="bg-orange" style="height: <?=$totalAdmin*10;?>px;"><span class="detail-chart">Total Data:
-                        <?=$totalAdmin;?></span></li>
-                <li class="bg-red" style="height: <?=$totalPegawai*10;?>px;"><span class="detail-chart">Total Data:
-                        <?=$totalPegawai;?></span></li>
-                <li class="bg-ungu" style="height: <?=$totalPengunjung*10;?>px;"><span class="detail-chart">Total Data:
-                        <?=$totalPengunjung;?></span></li>
+                <li class="bg-black" style="height: <?= $totalPengguna * 10; ?>px;"><span class="detail-chart">Total
+                        Data:
+                        <?= $totalPengguna; ?></span></li>
+                <li class="bg-orange" style="height: <?= $totalAdmin * 10; ?>px;"><span class="detail-chart">Total Data:
+                        <?= $totalAdmin; ?></span></li>
+                <li class="bg-red" style="height: <?= $totalPegawai * 10; ?>px;"><span class="detail-chart">Total Data:
+                        <?= $totalPegawai; ?></span></li>
+                <li class="bg-ungu" style="height: <?= $totalPengunjung * 10; ?>px;"><span class="detail-chart">Total
+                        Data:
+                        <?= $totalPengunjung; ?></span></li>
             </ul>
 
             <ul>
