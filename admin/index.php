@@ -2,6 +2,7 @@
 session_start();
 include("../koneksi.php");
 include("../proses.php");
+include("../header.php");
 
 if (!isset($_SESSION["username"])) {
     echo '<script>
@@ -20,33 +21,4 @@ if ($_SESSION["level"] != "admin") {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>SIG PANTAI</title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-
-<body>
-
-    <p>
-        <center>
-            <img src='../img/logokab.png' width='120' height='140'></a>
-        </center>
-
-    <h1>Sistem Informasi Geografis Pemetaan Potensi<br /> Objek Wisata Pantai di Kabupaten Tulungagung</h1>
-
-    <div class="kotak_dashboard">
-        <center>
-            <h3>Selamat Datang <?= $pengguna["level"]; ?></h3>
-            <hr>
-            <p class="centered">
-                <a href="tambah-pengguna.php" class="tombol_login">TAMBAH PENGGUNA</a>
-                <a href="../logout.php" class="tombol_login">KELUAR</a>
-        </center>
-        </p>
-    </div>
-</body>
-
-</html>
+<?php include("../footer.php"); ?>
