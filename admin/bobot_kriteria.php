@@ -1,6 +1,6 @@
 <?php
 	include('../koneksi.php');
-	include('../proses.php');
+	include('./fungsi.php');
 
 	include('../header.php');
 ?>
