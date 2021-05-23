@@ -10,18 +10,18 @@
 			<tr>
 				<th>Kriteria</th>
 <?php
-	for ($i=0; $i <= ($n-1); $i++) {
-		echo "<th>".getAlternatifNama($i)."</th>";
+	for ($i=0; $i <= ($n-1); $i++) { 
+		echo "<th>".getKriteriaNama($i)."</th>";
 	}
 ?>
 			</tr>
 		</thead>
 		<tbody>
 <?php
-	for ($x=0; $x <= ($n-1); $x++) {
+	for ($x=0; $x <= ($n-1); $x++) { 
 		echo "<tr>";
-		echo "<td>".getAlternatifNama($x)."</td>";
-			for ($y=0; $y <= ($n-1); $y++) {
+		echo "<td>".getKriteriaNama($x)."</td>";
+			for ($y=0; $y <= ($n-1); $y++) { 
 				echo "<td>".round($matrik[$x][$y],5)."</td>";
 			}
 
@@ -33,7 +33,7 @@
 			<tr>
 				<th>Jumlah</th>
 <?php
-		for ($i=0; $i <= ($n-1); $i++) {
+		for ($i=0; $i <= ($n-1); $i++) { 
 			echo "<th>".round($jmlmpb[$i],5)."</th>";
 		}
 ?>
@@ -50,8 +50,8 @@
 			<tr>
 				<th>Kriteria</th>
 <?php
-	for ($i=0; $i <= ($n-1); $i++) {
-		echo "<th>".getAlternatifNama($i)."</th>";
+	for ($i=0; $i <= ($n-1); $i++) { 
+		echo "<th>".getKriteriaNama($i)."</th>";
 	}
 ?>
 				<th>Jumlah</th>
@@ -60,10 +60,10 @@
 		</thead>
 		<tbody>
 <?php
-	for ($x=0; $x <= ($n-1); $x++) {
+	for ($x=0; $x <= ($n-1); $x++) { 
 		echo "<tr>";
-		echo "<td>".getAlternatifNama($x)."</td>";
-			for ($y=0; $y <= ($n-1); $y++) {
+		echo "<td>".getKriteriaNama($x)."</td>";
+			for ($y=0; $y <= ($n-1); $y++) { 
 				echo "<td>".round($matrikb[$x][$y],5)."</td>";
 			}
 
@@ -73,7 +73,7 @@
 		echo "</tr>";
 	}
 ?>
-
+			
 		</tbody>
 		<tfoot>
 			<tr>
@@ -91,10 +91,7 @@
 		</tfoot>
 	</table>
 
-
-
 <?php
-
 	if ($consRatio > 0.1) {
 ?>
 		<div class="ui icon red message">
@@ -118,40 +115,20 @@
 		</a>
 
 <?php
-
 	} else {
-		if ($jenis == getJumlahKriteria()) {
-?>
-
-<br>
-
-<form action="hasil.php">
-	<button class="ui right labeled icon button" style="float: right;">
-		<i class="right arrow icon"></i>
-		Lanjut
-	</button>
-</form>
-
-
-<?php
-
-		} else {
 
 ?>
 <br>
-	<a href="<?php echo "bobot.php?c=".($jenis + 1)?>">
+
+	<a href="bobot.php?c=1">
 	<button class="ui right labeled icon button" style="float: right;">
 		<i class="right arrow icon"></i>
 		Lanjut
 	</button>
 	</a>
 
-<?php
-
-		}
+<?php 
 	}
-
 	echo "</section>";
 	include('../footer.php');
-
 ?>

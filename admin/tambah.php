@@ -16,7 +16,7 @@
 		header('Location: '.$jenis.'.php');
 	}
 
-	include('../header.php');
+	include('../ahp.php');
 ?>
 
 <section class="content">

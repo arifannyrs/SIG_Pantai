@@ -22,7 +22,7 @@
 		tambahData('alternatif',$nama);
 	}
 
-	include('../header.php');
+	include('../ahp.php');
 
 ?>
 

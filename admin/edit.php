@@ -33,7 +33,7 @@
 		}
 	}
 
-	include('../header.php');
+	include('../ahp.php');
 ?>
 
 <section class="content">

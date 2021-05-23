@@ -22,7 +22,7 @@
 		tambahData('kriteria',$nama);
 	}
 
-	include('../header.php');
+	include('../ahp.php');
 ?>
 
 <section class="content">
