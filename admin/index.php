@@ -1,8 +1,9 @@
 <?php
 session_start();
 include("../koneksi.php");
-include("../proses.php");
+include("./fungsi.php");
 include("../header.php");
+
 
 if (!isset($_SESSION["username"])) {
     echo '<script>

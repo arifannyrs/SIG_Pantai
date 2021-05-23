@@ -1,6 +1,6 @@
 <?php 
 	include('../koneksi.php');
-	include('../proses.php');
+	include('./fungsi.php');
 
 	// menjalankan perintah edit
 	if(isset($_POST['edit'])) {
@@ -29,18 +29,18 @@
 
 <section class="content">
 
-	<h2 class="ui header">Alternatif</h2>
+    <h2 class="ui header">Alternatif</h2>
 
-	<table class="ui celled table">
-		<thead>
-			<tr>
-				<th class="collapsing">No</th>
-				<th colspan="2">Nama Alternatif</th>
-			</tr>
-		</thead>
-		<tbody>
+    <table class="ui celled table">
+        <thead>
+            <tr>
+                <th class="collapsing">No</th>
+                <th colspan="2">Nama Alternatif</th>
+            </tr>
+        </thead>
+        <tbody>
 
-		<?php
+            <?php
 			// Menampilkan list alternatif
 			$query = "SELECT id,nama FROM alternatif ORDER BY id";
 			$result	= mysqli_query($koneksi, $query);
@@ -49,43 +49,45 @@
 			while ($row = mysqli_fetch_array($result)) {
 				$i++;
 		?>
-			<tr>
-				<td><?php echo $i ?></td>
-				<td><?php echo $row['nama'] ?></td>
-				<td class="right aligned collapsing">
-					<form method="post" action="alternatif.php">
-						<input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-						<button type="submit" name="edit" class="ui mini teal left labeled icon button"><i class="right edit icon"></i>EDIT</button>
-						<button type="submit" name="delete" class="ui mini red left labeled icon button"><i class="right remove icon"></i>DELETE</button>
-					</form>
-				</td>
-			</tr>
+            <tr>
+                <td><?php echo $i ?></td>
+                <td><?php echo $row['nama'] ?></td>
+                <td class="right aligned collapsing">
+                    <form method="post" action="alternatif.php">
+                        <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                        <button type="submit" name="edit" class="ui mini teal left labeled icon button"><i
+                                class="right edit icon"></i>EDIT</button>
+                        <button type="submit" name="delete" class="ui mini red left labeled icon button"><i
+                                class="right remove icon"></i>DELETE</button>
+                    </form>
+                </td>
+            </tr>
 
-<?php } ?>
-	
-		</tbody>
-		<tfoot class="full-width">
-			<tr>
-				<th colspan="3">
-					<a href="tambah.php?jenis=alternatif">
-						<div class="ui right floated small primary labeled icon button">
-						<i class="plus icon"></i>Tambah
-						</div>
-					</a>
-				</th>
-			</tr>
-		</tfoot>
-	</table>
+            <?php } ?>
 
-	<br>
+        </tbody>
+        <tfoot class="full-width">
+            <tr>
+                <th colspan="3">
+                    <a href="tambah.php?jenis=alternatif">
+                        <div class="ui right floated small primary labeled icon button">
+                            <i class="plus icon"></i>Tambah
+                        </div>
+                    </a>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <br>
 
 
-	<form action="bobot_kriteria.php">
-	<button class="ui right labeled icon button" style="float: right;">
-		<i class="right arrow icon"></i>
-		Lanjut
-	</button>
-	</form>
+    <form action="bobot_kriteria.php">
+        <button class="ui right labeled icon button" style="float: right;">
+            <i class="right arrow icon"></i>
+            Lanjut
+        </button>
+    </form>
 </section>
 
 <?php include('../footer.php'); ?>
