@@ -1,8 +1,7 @@
 <?php
 session_start();
 include("../koneksi.php");
-include("./fungsi.php");
-include("../ahp.php");
+include("../user.php");
 
 
 if (!isset($_SESSION["username"])) {

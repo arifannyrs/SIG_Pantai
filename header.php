@@ -18,6 +18,7 @@
             <ul>
                 <li><a class="item" href="ahp.php">Analytical Hierarchy Process</a></li>
                 <li><a class="item" href="sig.php">Sistem Informasi Geografis</a></li>
+                <li><a class="item" href="data-pengguna.php">Tambah Pengguna</a></li>
                 <li><a class="item" href="../logout.php">Keluar</a></li>
             </ul>
         </nav>
