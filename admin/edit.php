@@ -1,6 +1,6 @@
 <?php
 	include('../koneksi.php');
-	include('../proses.php');
+	include('./fungsi.php');
 
 	// mendapatkan data edit
 	if(isset($_GET['jenis']) && isset($_GET['id'])) {
