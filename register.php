@@ -25,13 +25,13 @@ include("proses.php");
 
     <p>
         <center>
-            <img src='img/logokab.png' width='120' height='140'></a>
+            <img src='./img/logo.png' width='120' height='140'></a>
         </center>
 
     <h1>Sistem Informasi Geografis Pemetaan Potensi<br /> Objek Wisata Pantai di Kabupaten Tulungagung</h1>
 
     <div class="kotak_login">
-        <p class="tulisan_login">Silahkan login</p>
+        <p class="tulisan_login">Silahkan Daftar</p>
         <form action="" method="post">
             <label>Username</label>
             <input type="text" name="username" class="form_login" placeholder="Username .." required="required">

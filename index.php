@@ -25,7 +25,7 @@ include("proses.php");
 
     <p>
         <center>
-            <img src='img/logokab.png' width='120' height='140'></a>
+            <img src='./img/logo.png' width='120' height='140'></a>
         </center>
 
     <h1>Sistem Informasi Geografis Pemetaan Potensi<br /> Objek Wisata Pantai di Kabupaten Tulungagung</h1>
