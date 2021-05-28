@@ -41,7 +41,7 @@ if ($_SESSION["level"] != "pengunjung") {
             <h3>Selamat Datang <?= $pengguna["level"]; ?></h3>
             <hr>
             <p>
-                <a href="../logout.php" class="tombol_login">KELUAR</a>
+                <a href="../logout.php" class="tombol_keluar">KELUAR</a>
         </center>
         </p>
     </div>
