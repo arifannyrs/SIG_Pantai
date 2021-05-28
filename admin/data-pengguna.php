@@ -1,25 +1,5 @@
 <?php 
-	session_start();
-	include('../koneksi.php');
-	include('../proses.php');
-
-	if(!isset($_SESSION["username"])){
-		echo'<script>
-				  alert("Mohon login dahulu !");
-				  window.location="../index.php";
-			   </script>';
-		return false;
-	}
-  
-	if($_SESSION["level"] != "admin"){
-		  echo'<script>
-				  alert("Maaf Anda Tidak Berhak Ke Halaman ini !");
-				  window.location="../'.$_SESSION["level"].'/";
-			   </script>';
-		  return false;
-	}
-
-	include('../user.php');
+	include('./ceklogin.php');
 ?>
 
 <section class="content">
@@ -52,8 +32,8 @@
                 <td><?=$val["password"];?></td>
 				<td><?=$val["date"];?></td>
 				<td class="right aligned collapsing">
-					<form method="post" action="kriteria.php">
-						<input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+					<form method="post" action="data-pengguna.php">
+						<input type="hidden" name="id" value="<?php echo $val['id'] ?>">
 						<button type="submit" name="edit" class="ui mini teal left labeled icon button"><i class="right edit icon"></i>EDIT</button>
 						<button type="submit" name="delete" class="ui mini red left labeled icon button"><i class="right remove icon"></i>DELETE</button>
 					</form>

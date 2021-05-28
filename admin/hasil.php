@@ -1,8 +1,5 @@
-<?php
-
-include('../koneksi.php');
-include('./fungsi.php');
-
+<?php 
+	include('./ceklogin.php');
 
 // menghitung perangkingan
 $jmlKriteria 	= getJumlahKriteria();
@@ -35,8 +32,6 @@ for ($i=0; $i <= ($jmlAlternatif-1); $i++) {
 		exit();
 	}
 }
-
-include('../ahp.php');
 
 ?>
 

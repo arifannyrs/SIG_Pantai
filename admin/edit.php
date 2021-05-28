@@ -1,6 +1,5 @@
 <?php
-	include('../koneksi.php');
-	include('./fungsi.php');
+	include('./ceklogin.php');
 
 	// mendapatkan data edit
 	if(isset($_GET['jenis']) && isset($_GET['id'])) {
@@ -32,8 +31,6 @@
 			exit();
 		}
 	}
-
-	include('../ahp.php');
 ?>
 
 <section class="content">

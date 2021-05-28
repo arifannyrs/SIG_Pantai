@@ -1,23 +1,10 @@
 <?php
-session_start();
-include("../header.php");
-
-
-if (!isset($_SESSION["username"])) {
-    echo '<script>
-                alert("Mohon login dahulu !");
-                window.location="../index.php";
-             </script>';
-    return false;
-}
-
-if ($_SESSION["level"] != "admin") {
-    echo '<script>
-                alert("Maaf Anda Tidak Berhak Ke Halaman ini !");
-                window.location="../' . $_SESSION["level"] . '/";
-             </script>';
-    return false;
-}
+    include('./ceklogin.php');
 ?>
 
-<?php include("../footer.php"); ?>
+	<section class="content">
+			<h2 class="ui header">Selamat Datang <?= $pengguna["level"]; ?>! </h2>
+
+	</section>
+
+<?php include('../footer.php'); ?>
