@@ -1,51 +1,33 @@
 <?php
-	include('./ceklogin.php');
-
-	// mendapatkan data edit
-	if(isset($_GET['jenis']) && isset($_GET['id'])) {
-		$id 	= $_GET['id'];
-		$jenis	= $_GET['jenis'];
-
-		// hapus record
-		$query 	= "SELECT nama FROM $jenis WHERE id=$id";
-		$result	= mysqli_query($koneksi, $query);
-		
-		while ($row = mysqli_fetch_array($result)) {
-			$nama = $row['nama'];
-		}
-	}
-
-	if (isset($_POST['update'])) {
-		$id 	= $_POST['id'];
-		$jenis	= $_POST['jenis'];
-		$nama 	= $_POST['nama'];
-
-		$query 	= "UPDATE $jenis SET nama='$nama' WHERE id=$id";
-		$result	= mysqli_query($koneksi, $query);
-
-		if (!$result) {
-			echo "Update gagal";
-			exit();
-		} else {
-			header('Location: '.$jenis.'.php');
-			exit();
-		}
-	}
+    include('./ceklogin.php');
+	$id = $_GET['id'];
+	$data = mysqli_query($koneksi,"SELECT * FROM login WHERE id='$id'");
+	while($val = mysqli_fetch_array($data)){
 ?>
-
 <section class="content">
-	<h2>Edit <?php echo $jenis?></h2>
+	<h2>Edit Pengguna</h2>
 
-	<form class="ui form" method="post" action="edit.php">
+	<form class="ui form" method="post" action="">
 		<div class="inline field">
-			<label>Nama <?php echo $jenis ?></label>
-			<input type="text" name="nama" value="<?php echo $nama?>">
-			<input type="hidden" name="id" value="<?php echo $id?>">
-			<input type="hidden" name="jenis" value="<?php echo $jenis?>">
+        <ul>
+            <label>Username</label>
+			<input type="hidden" name="id" value="<?php echo $val['id'] ?>">
+			<input type="text" name="username" value="<?php echo $val['username']; ?>">
+        </ul>
+        <ul>
+            <label>Email</label>
+			<input type="email" name="email" value="<?php echo $val['email']; ?>">
+        </ul>
+        <ul>
+            <label>Password</label>
+			<input type="password" name="password" value="<?php echo $val['password']; ?>">
 		</div>
-		<br>
-		<input class="ui green button" type="submit" name="update" value="UPDATE">
-	</form>
+        </ul>
+		<ul>
+        <br>
+		<input class="ui green button" type="submit" name="edit_pengguna" value="SIMPAN" href="data-pengguna.php">
+        </ul>
+    </form>
 </section>
 
-<?php include('../footer.php'); ?>
+<?php include('../footer.php'); }?>

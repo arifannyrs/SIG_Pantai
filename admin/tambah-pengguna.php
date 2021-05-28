@@ -18,7 +18,6 @@
             <label>Level</label>
             <select name="level" required>
                 <option disabled selected>-Silahkan Pilih Level-</option>
-                <option value="admin">Admin</option>
                 <option value="pegawai">Pegawai</option>
                 <option value="pengunjung">Pengunjung</option>
             </select>

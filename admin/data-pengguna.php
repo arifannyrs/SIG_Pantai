@@ -33,10 +33,9 @@
 				<td><?=$val["date"];?></td>
 				<td class="right aligned collapsing">
 					<form method="post" action="data-pengguna.php">
-						<input type="hidden" name="id" value="<?php echo $val['id'] ?>">
-						<button type="submit" name="edit" class="ui mini teal left labeled icon button"><i class="right edit icon"></i>EDIT</button>
-						<button type="submit" name="delete" class="ui mini red left labeled icon button"><i class="right remove icon"></i>DELETE</button>
-					</form>
+                        <a href="edit.php?id=<?php echo $val['id']; ?>" name="edit_pengguna" class="ui mini teal left labeled icon button"><i class="right edit icon"></i>EDIT</a>
+						<a href="hapus.php?id=<?php echo $val['id']; ?>" name="hapus_pengguna" class="ui mini red left labeled icon button"><i class="right remove icon"></i>HAPUS</button>
+                    </form>
 				</td>
 			</tr>
             <?php $no++; } ?>

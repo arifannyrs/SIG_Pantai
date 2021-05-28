@@ -167,17 +167,54 @@ if (isset($_POST["tambah_pengguna"])) {
 		return false;
 	}
 
-	//Menymipan data ke tabel login
+	//Menyimpan data ke tabel login
 	$save = mysqli_query($koneksi, "INSERT INTO login(username,email,password,level) VALUES('$username', '$email', '$password', '$level')");
 	if ($save === true) {
 		echo '<script>
                  alert("Pengguna Baru Berhasil Ditambahkan...");
-                 window.location="' . $base_url . '/admin/tambah-pengguna.php";
+                 window.location="' . $base_url . '/admin/data-pengguna.php";
               </script>';
 	} else {
 		echo '<script>
                  alert("Pengguna Baru Gagal Ditambahkan !");
                  window.location="' . $base_url . '/admin/tambah-pengguna.php";
+              </script>';
+		return false;
+	}
+}
+
+//Proses edit pengguna
+if (isset($_POST["edit_pengguna"])) {
+	$id = $_POST["id"];
+	$username = $_POST["username"];
+	$email = $_POST["email"];
+	$password = md5($_POST["password"]);
+	
+	//Menyimpan data ke tabel login
+	$save = mysqli_query($koneksi,"UPDATE login SET username='$username', email='$email', password='$password' where id='$id'");
+	if ($save === true) {
+		echo '<script>
+                 alert("Pengguna Baru Berhasil Ditambahkan...");
+                 window.location="' . $base_url . '/admin/data-pengguna.php";
+              </script>';
+	} else {
+		echo '<script>
+                 alert("Pengguna Baru Gagal Ditambahkan !");
+                 window.location="' . $base_url . '/admin/edit.php";
+              </script>';
+		return false;
+	}
+}
+
+//Proses Hapus Pengguna
+if (isset($_POST["hapus_pengguna"])) {
+	$id = $_GET["id"];
+
+	$cek = mysqli_query($koneksi, "SELECT * FROM login WHERE id='$id'");
+	if (mysqli_num_rows($cek) === 1) {
+		echo '<script>
+                 alert("Nama tidak terdaftar, silahkan coba dengan email lain !");
+                 window.location="' . $base_url . '/admin/data-pengguna.php";
               </script>';
 		return false;
 	}
